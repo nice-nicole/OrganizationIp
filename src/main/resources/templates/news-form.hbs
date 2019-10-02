@@ -1,0 +1,77 @@
+{{#partial "content"}}
+<div class="col-md-6">
+        <h2>Add news</h2>
+        <hr>
+        <br>
+    {{#if departments}}
+        <form action="/success2" method="post">
+        <div class="form-group">
+            <label for="title">Title</label>
+             <input type="text" class="form-control" id="title" name="title" placeholder="enter new's title">
+          </div>
+        <div class="form-group">
+                <label for="body">new's body</label>
+                <input type="text" class="form-control" id="body" name="body" placeholder="enter body's news">
+          </div>
+        <div class="form-group">
+            <label for="departmentId">department:</label>
+                <select id="departmentId" name="departmentId" class="form-control" placeholder="select department">
+                    {{#each departments}}
+                        <option value="{{id}}">{{name}}</option>
+                    {{/each}}
+                </select>
+        </div>
+                <p>Don't see the right department?<a href="/departments/new">Add a new one first.</a></p>
+
+            <button type="submit" class="btn btn-default">Add news</button>
+        </form>
+                    {{else}}
+                        <h3> You'll need to add a department before you add news. <a href="/departments/new">Add department.</a> </h3>
+
+         {{/if}}
+ </div>
+
+<div class="col-md-6">
+<h2>News</h2>
+<hr>
+<br>
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">news id</th>
+      <th scope="col">title</th>
+      <th scope="col">body</th>
+      <th scope="col">department Id</th>
+
+
+    </tr>
+  </thead>
+      {{#if news}}
+      {{#each news}}
+
+  <tbody>
+    <tr>
+      <th scope="row">{{id}}</th>
+      <td>{{title}}</td>
+      <td>{{body}}</td>
+      <td>{{departmentId}}</td>
+
+    </tr>
+  </tbody>
+    {{/each}}
+  {{/if}}
+</table>
+</div>
+
+<style>
+body{
+background-image:url("https://wallpaperplay.com/walls/full/8/d/6/128937.jpg");
+background-repeat: no-repeat;
+background-size:cover;
+color:white
+}
+</style>
+
+{{/partial}}
+
+{{> layout.hbs}}

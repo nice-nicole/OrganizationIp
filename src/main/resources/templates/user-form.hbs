@@ -1,0 +1,76 @@
+{{#partial "content"}}
+<div class="col-md-6">
+        <h2>Add a new user</h2>
+        <hr>
+        <br>
+        <form action="/success" method="post">
+        <div class="form-group">
+            <label for="name">name</label>
+             <input type="text" class="form-control" id="name" name="name" placeholder="enter name">
+          </div>
+        <div class="form-group">
+                <label for="position">position</label>
+                <input type="text" class="form-control" id="position" name="position" placeholder="enter position">
+          </div>
+        <div class="form-group">
+                <label for="role">role</label>
+                <input type="text" class="form-control" id="role" name="role" placeholder="enter role">
+          </div>
+    <div class="form-group">
+            <label for="departmentId">department:</label>
+                <select id="departmentId" name="departmentId" class="form-control" placeholder="select department">
+                    {{#each departments}}
+                        <option value="{{id}}">{{name}}</option>
+                    {{/each}}
+                </select>
+        </div>
+            <button type="submit" class="btn btn-default">Add user</button>
+        </form>
+        <p>Don't see the right department?<a href="/departments/new">Add a new one first.</a></p>
+</div>
+
+
+<div class="col-md-6">
+<h2>Users</h2>
+<hr>
+<br>
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">user id</th>
+      <th scope="col">Name</th>
+      <th scope="col">position</th>
+      <th scope="col">role</th>
+      <th scope="col">department Id</th>
+
+    </tr>
+  </thead>
+      {{#if users}}
+      {{#each users}}
+
+  <tbody>
+    <tr>
+      <th scope="row">{{id}}</th>
+      <td>{{name}}</td>
+      <td>{{position}}</td>
+      <td>{{role}}</td>
+      <td>{{departmentId}}</td>
+
+    </tr>
+  </tbody>
+    {{/each}}
+  {{/if}}
+</table>
+</div>
+<style>
+body{
+background-image:url("https://wallpaperplay.com/walls/full/8/d/6/128937.jpg");
+background-repeat: no-repeat;
+background-size:cover;
+color:white;
+}
+</style>
+
+{{/partial}}
+
+{{> layout.hbs}}
