@@ -8,6 +8,13 @@ Nice Nicole Ininahazwe
 This is an app that allows users to add and view users, departments and news for a specific department in an organization.
 
 
+![pic100](https://user-images.githubusercontent.com/52698242/66050503-a077b700-e52d-11e9-8348-02c43f163536.png)
+
+![pic200](https://user-images.githubusercontent.com/52698242/66050513-a372a780-e52d-11e9-843f-0a2fbd8c6a1c.png)
+
+![pic300](https://user-images.githubusercontent.com/52698242/66050520-a53c6b00-e52d-11e9-87d4-544be369c49b.png)
+
+
 ## User Story
 
 - Users can add a user.
